@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Registration Form</title>
+</head>
+<body>
+    <h1>HTML Registration Form</h1>
+    <hr><br>
+    <form method="post">
+        <label for="text">Name:</label>
+        <input type="text" id="text" placeholder="Full Name" name="text"><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="abc@email.com"><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Password" name="password"><br><br>
+
+        <label for="date">Date of Birth:</label>
+        <input type="date" id="date" name="date"><br><br>
+
+        <label>Gender:</label>
+        <input type="radio" id="radio1" name="radio" value="option1">
+        <label for="radio1">Male</label>
+        <input type="radio" id="radio2" name="radio" value="option2">
+        <label for="radio2">Female</label><br><br>
+
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <option value="bd" selected>Bangladesh</option>
+            <option value="us">United States</option>
+            <option value="ca">Canada</option>
+            <option value="uk">United Kingdom</option>
+            <option value="in">India</option>
+            <option value="au">Australia</option>
+            <option value="de">Germany</option>
+            <option value="fr">France</option>
+            <option value="jp">Japan</option>
+            <option value="cn">China</option>
+        </select><br><br>
+
+        <label for="address">Address:</label>
+        <textarea name="address" id="address"></textarea><br><br>
+
+        <label>Upload Image:</label>
+        <input type="file" id="file" name="file" accept="image/*"><br><br><br>
+
+        <input type="checkbox" id="terms" name="terms">
+        <label for="terms">I agree to the Terms and Conditions!!!</label><br><br><br>
+
+        <input type="reset">
+        <input type="submit" value="Registration">
+        <br><br>
+
+        <p>Already have an account? <a href="login_form.html">Log in!!!</a></p>
+    </form>
+</body>
+</html>
