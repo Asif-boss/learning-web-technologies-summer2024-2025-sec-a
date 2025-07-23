@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Profile Picture</title>
+    <style>
+        form{
+            width: 350px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Profile Picture</legend>
+            <table>
+                <tr>
+                    <td><label for="userId">User Id</label></td>
+                    <td><input type="text" id="userId" name="userId"><br></td>
+                </tr>
+                <tr>
+                    <td><label for="picture">Picture</label></td>
+                    <td><input type="file" id="picture" name="picture" accept="image/*"></td>
+                </tr> 
+            </table>
+            <hr>
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+</body>
+</html>

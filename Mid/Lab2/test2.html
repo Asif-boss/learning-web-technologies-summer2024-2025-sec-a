@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Example</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Degree</legend>
+            <label><input type="checkbox" name="degree" value="SSC"> SSC</label><br>
+            <label><input type="checkbox" name="degree" value="HSC"> HSC</label><br>
+            <label><input type="checkbox" name="degree" value="BSc"> BSc</label><br>
+            <button type="submit">Submit</button>
+        </fieldset>
+
+        <fieldset>
+            <legend>Blood Group</legend>
+            <select name="bloodGroup">
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+            </select>
+            <button type="submit">Submit</button>
+        </fieldset>
+
+        <fieldset>
+            <legend>Profile Picture</legend>
+            <label for="userId">User Id:</label>
+            <input type="text" id="userId" name="userId"><br><br>
+            <label for="picture">Picture:</label>
+            <input type="file" id="picture" name="picture"><br>
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+</body>
+</html>
