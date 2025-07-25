@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <style>
+        body {
+            font-family: "Sofia", Arial, sans-serif;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 0px 30px 30px 30px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px 0;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            font-family: "Sofia", Arial, sans-serif;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>User Login</h2>
+    <form onsubmit="return validateForm()">
+        <label>Username:</label>
+        <input type="text" id="username">
+
+        <label>Password:</label>
+        <input type="password" id="password">
+
+        <div class="error" id="error"></div>
+
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+<script>
+function validateForm() {
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value;
+    const errorDiv = document.getElementById("error");
+
+    errorDiv.textContent = "";
+
+    if (username === "" || password === "") {
+        errorDiv.textContent = "Please fill in all fields.";
+        return false;
+    }
+
+    if (password.length < 8) {
+        errorDiv.textContent = "Password must be at least 8 characters long.";
+        return false;
+    }
+
+    let hasUpper = false;
+    let hasLower = false;
+    let hasDigit = false;
+    let hasSpecial = false;
+
+    for (let i = 0; i < password.length; i++) {
+        const ch = password.charAt(i);
+        // const code = ch.charCodeAt(0);
+
+        if (ch >= 'A' && ch <= 'Z') hasUpper = true;
+        else if (ch >= 'a' && ch <= 'z') hasLower = true;
+        else if (ch >= '0' && ch <= '9') hasDigit = true;
+        else hasSpecial = true;
+    }
+
+    if (!hasUpper || !hasLower || !hasDigit || !hasSpecial) {
+        errorDiv.textContent = "Password must include uppercase, lowercase, number, and special character.";
+        return false;
+    }
+
+    alert("Login successful!");
+    return true;
+}
+</script>
+
+</body>
+</html>
