@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Name</title>
+</head>
+
+<body>
+    <form onsubmit="return check()">
+        <label for="name">Name</label><br>
+        <input type="text" id="name" name="name"><br>
+        <div id="nameError" style="color: red;"></div><br>
+        <input type="submit" value="Submit">
+
+    </form>
+
+    <script>
+        function check() {
+            const nameInput = document.getElementById('name').value.trim();
+            const nameError = document.getElementById('nameError');
+            nameError.textContent = '';
+
+            const words = nameInput.split(" ");
+            const firstChar = nameInput.charAt(0);
+
+            if (!nameInput) {
+                nameError.textContent = 'Cannot be empty.';
+            } else if (words.length < 2) {
+                nameError.textContent = 'Must contain at least two words.';
+            } else if ((firstChar >= 'a' && firstChar <= 'z') || (firstChar >= 'A' && firstChar <= 'Z')) {
+                let flag = 1;
+                for (let i = 0; i < nameInput.length && flag === 1; i++) {
+                    if (!((nameInput[i] >= 'a' && nameInput[i] <= 'z') || (nameInput[i] >= 'A' && nameInput[i] <= 'Z') || nameInput[i] === '.' || nameInput[i] === '-'  || nameInput[i] === ' ')) {
+                        nameError.textContent = 'Invalid format. Can contain letters, dots, or dashes.';
+                        flag = 0;
+                    }
+                }               
+                if (flag === 1){
+                    alert('Name is valid!');
+                    return true;
+                } 
+            } else {
+                nameError.textContent = 'Invalid format. Must start with a letter';
+            }
+            return false;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Date of Birth</title>
+    <style>
+        td{
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="return check()">  
+        <fieldset style="width:180px">
+            <legend>Date of Birth</legend>
+            <table>
+                <tr>
+                    <td>dd</td>
+                    <td>mm</td>
+                    <td>yyyy</td>
+                </tr>
+            </table>
+            <input type="text" id="day" size="1"> /
+            <input type="text" id="month" size="1"> /
+            <input type="text" id="year" size="2">
+            <hr>
+            <input type="submit" value="Submit">
+        </fieldset> 
+    </form>
+    <script>
+        function check() {
+            const day = document.getElementById('day').value.trim();
+            const month = document.getElementById('month').value.trim();
+            const year = document.getElementById('year').value.trim();
+
+            if (day === "" || month === "" || year === "") {
+                alert('All fields must be filled out.');
+                return false;
+            }
+
+            const dayNum = parseInt(day, 10);
+            const monthNum = parseInt(month, 10);
+            const yearNum = parseInt(year, 10);
+
+            if (isNaN(dayNum) || isNaN(monthNum) || isNaN(yearNum)) {
+                alert('Please enter valid numbers for day, month, and year.');
+                return false;
+            }
+
+            if (dayNum < 1 || dayNum > 31) {
+                alert('Day must be between 1 and 31.');
+                return false;
+            }
+
+            if (monthNum < 1 || monthNum > 12) {
+                alert('Month must be between 1 and 12.');
+                return false;
+            }
+
+            if (yearNum < 1900 || yearNum > 2016) {
+                alert('Year must be between 1900 and 2016.');
+                return false;
+            }
+
+            alert('Input is valid!');
+            return true;
+        }
+    </script>
+</body>
+</html>

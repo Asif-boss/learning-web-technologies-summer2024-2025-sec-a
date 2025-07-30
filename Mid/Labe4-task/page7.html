@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Profile Picture</title>
+    <style>
+        form{
+            width: 350px;
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="return check()">
+        <fieldset>
+            <legend>Profile Picture</legend>
+            <table>
+                <tr>
+                    <td><label for="userId">User Id</label></td>
+                    <td><input type="text" id="userId" name="userId"><br></td>
+                </tr>
+                <tr>
+                    <td><label for="picture">Picture</label></td>
+                    <td><input type="file" id="picture" name="picture" accept="image/*"></td>
+                </tr> 
+            </table>
+            <hr>
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+
+    <script>
+        function check() {
+            const userId = document.getElementById('userId').value.trim();
+            const picture = document.getElementById('picture').files.length;
+
+            if (!(Number(userId) >= 0) || !userId) {
+                alert('User Id cannot be empty and must be a positive number.');
+                return false;
+            }
+
+            if (picture === 0) {
+                alert('Please upload a picture.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Blood Group</title>
+    <style>
+        form {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <form onsubmit="return check()">
+        <label>Blood Group</label>
+        <select name="bloodGroup">
+            <option value="">Select one</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+        </select>
+        <hr>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function check() {
+            const bloodGroup = document.querySelector('select[name="bloodGroup"]').value;
+
+            if (bloodGroup === "") {
+                alert('Please select a blood group.');
+                return false; 
+            }
+            alert('Input is valid!');
+            return true;
+        }
+    </script>
+</body>
+
+</html>

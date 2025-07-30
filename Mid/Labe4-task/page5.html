@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Degree</title>
+    <style>
+        fieldset{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="return check()">
+        <fieldset>
+            <legend>Degree</legend>
+            <label><input type="checkbox" name="degree" value="SSC"> SSC</label>
+            <label><input type="checkbox" name="degree" value="HSC"> HSC</label>
+            <label><input type="checkbox" name="degree" value="BSc"> BSc</label>
+        </fieldset><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function check(event) {
+            const checkbox = document.getElementsByName('degree');
+
+            for (let i = 0; i < checkbox.length; i++) {
+                if (checkbox[i].checked) {
+                    alert('Input is valid!');
+                    return true;
+                }
+            }
+            
+            alert('Please select at least one gender option.');
+            return false;
+        }
+    </script>
+</body>
+</html>
