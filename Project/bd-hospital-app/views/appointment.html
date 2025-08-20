@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Scheduling - BD Hospital</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Schedule an Appointment</h1>
+        <form id="appointmentForm">
+            <label for="patientName">Patient Name:</label>
+            <input type="text" id="patientName" name="patientName" required>
+
+            <label for="doctorSelect">Select Doctor:</label>
+            <select id="doctorSelect" name="doctor" required>
+                <option value="">--Select Doctor--</option>
+                <option value="doctor1">Dr. Smith</option>
+                <option value="doctor2">Dr. Johnson</option>
+                <option value="doctor3">Dr. Lee</option>
+            </select>
+
+            <label for="appointmentDate">Appointment Date:</label>
+            <input type="date" id="appointmentDate" name="appointmentDate" required>
+
+            <label for="appointmentTime">Appointment Time:</label>
+            <input type="time" id="appointmentTime" name="appointmentTime" required>
+
+            <button type="submit">Schedule Appointment</button>
+        </form>
+
+        <div id="appointmentList">
+            <h2>Your Appointments</h2>
+            <ul id="appointments">
+                <!-- Appointments will be dynamically populated here -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

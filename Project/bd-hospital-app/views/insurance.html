@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Claims - BD Hospital</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Insurance Claims</h1>
+        <form id="insurance-claim-form">
+            <div class="form-group">
+                <label for="patient-id">Patient ID:</label>
+                <input type="text" id="patient-id" name="patient-id" required>
+            </div>
+            <div class="form-group">
+                <label for="insurance-provider">Insurance Provider:</label>
+                <input type="text" id="insurance-provider" name="insurance-provider" required>
+            </div>
+            <div class="form-group">
+                <label for="claim-details">Claim Details:</label>
+                <textarea id="claim-details" name="claim-details" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="claim-amount">Claim Amount:</label>
+                <input type="number" id="claim-amount" name="claim-amount" required>
+            </div>
+            <button type="submit">Submit Claim</button>
+        </form>
+        <div id="claim-status"></div>
+    </div>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
